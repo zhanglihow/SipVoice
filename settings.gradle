@@ -1,0 +1,2 @@
+include ':app', ':sipservice', ':crypto'
+rootProject.name='SipNewTest'
