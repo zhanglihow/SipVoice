@@ -1,0 +1,13 @@
+call out:
+
+10:39:28.396 21238-21254/com.zhanglihow.sipnewtest D/sip: Making call to sip:qwe@25.30.9.134:8060
+10:39:28.606 21238-21254/com.zhanglihow.sipnewtest D/sip: New outgoing call with ID: 1
+10:39:28.606 21238-21238/com.zhanglihow.sipnewtest I/sip: onCallState - accountID: sip:asd@25.30.9.134, callID: 1, callStateCode: PJSIP_INV_STATE_CALLING, callStatusCode: null, connectTimestamp: 0, isLocalHold: false, isLocalMute: false, isLocalVideoMute: false
+10:39:28.766 21238-21238/com.zhanglihow.sipnewtest I/sip: onCallState - accountID: sip:asd@25.30.9.134, callID: 1, callStateCode: PJSIP_INV_STATE_EARLY, callStatusCode: PJSIP_SC_RINGING, connectTimestamp: 0, isLocalHold: false, isLocalMute: false, isLocalVideoMute: false
+10:39:30.576 21238-21238/com.zhanglihow.sipnewtest I/sip: onCallState - accountID: sip:asd@25.30.9.134, callID: 1, callStateCode: PJSIP_INV_STATE_CONNECTING, callStatusCode: PJSIP_SC_OK, connectTimestamp: 0, isLocalHold: false, isLocalMute: false, isLocalVideoMute: false
+10:39:30.626 21238-21238/com.zhanglihow.sipnewtest I/sip: onCallState - accountID: sip:asd@25.30.9.134, callID: 1, callStateCode: PJSIP_INV_STATE_CONFIRMED, callStatusCode: PJSIP_SC_OK, connectTimestamp: 1577241570639, isLocalHold: false, isLocalMute: false, isLocalVideoMute: false
+10:39:47.306 21238-21238/com.zhanglihow.sipnewtest I/sip: onRegistration - accountID: sip:asd@25.30.9.134, registrationStateCode: PJSIP_SC_OK
+10:41:28.746 21238-21306/com.zhanglihow.sipnewtest D/sip: Removing call with ID: 1
+10:41:28.746 21238-21238/com.zhanglihow.sipnewtest I/sip: Call Stats sent 118 opus_48000
+10:41:28.746 21238-21306/com.zhanglihow.sipnewtest I/sip: sip state=disconnect
+10:41:28.746 21238-21238/com.zhanglihow.sipnewtest I/sip: onCallState - accountID: sip:asd@25.30.9.134, callID: 1, callStateCode: PJSIP_INV_STATE_DISCONNECTED, callStatusCode: PJSIP_SC_OK, connectTimestamp: 1577241570639, isLocalHold: false, isLocalMute: false, isLocalVideoMute: false
