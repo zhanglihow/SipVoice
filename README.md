@@ -8,13 +8,15 @@ demo中，实现了基本的语音对讲的功能，拨号，接听，静音，�
   
   
 拨号：  
-<img width = "400" height = "650" src="https://github.com/zhanglihow/SipVoice/blob/master/img/callout_1.png?raw=true" />
-<img width = "400" height = "650" src="https://github.com/zhanglihow/SipVoice/blob/master/img/callout_2.png?raw=true" />
-<img width = "400" height = "650" src="https://github.com/zhanglihow/SipVoice/blob/master/img/callout_3.png?raw=true" />
+
+<img width = "450" height = "750" src="https://github.com/zhanglihow/SipVoice/blob/master/img/callout_1.png?raw=true" />
+<img width = "450" height = "750" src="https://github.com/zhanglihow/SipVoice/blob/master/img/callout_2.png?raw=true" />
+<img width = "450" height = "750" src="https://github.com/zhanglihow/SipVoice/blob/master/img/callout_3.png?raw=true" />
 
 
-接听：
-<img width = "400" height = "650" src="https://github.com/zhanglihow/SipVoice/blob/master/img/callin_1.png?raw=true" />
-<img width = "400" height = "650" src="https://github.com/zhanglihow/SipVoice/blob/master/img/callin_2.png?raw=true" />
-<img width = "400" height = "650" src="https://github.com/zhanglihow/SipVoice/blob/master/img/callin_3.png?raw=true" />
+接听：  
+
+<img width = "450" height = "750" src="https://github.com/zhanglihow/SipVoice/blob/master/img/callin_1.png?raw=true" />
+<img width = "450" height = "750" src="https://github.com/zhanglihow/SipVoice/blob/master/img/callin_2.png?raw=true" />
+<img width = "450" height = "750" src="https://github.com/zhanglihow/SipVoice/blob/master/img/callin_3.png?raw=true" />
 
