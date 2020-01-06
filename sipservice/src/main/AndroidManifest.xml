@@ -27,8 +27,6 @@
             android:enabled="true"
             android:exported="true"/>
 
-        <activity android:name="com.zhanglihow.sipnewtest.ui.CallOutActivity" />
-        <activity android:name="com.zhanglihow.sipnewtest.ui.CallInActivity" />
     </application>
 
 </manifest>

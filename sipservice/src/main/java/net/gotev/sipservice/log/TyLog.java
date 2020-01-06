@@ -21,7 +21,8 @@ public class TyLog {
 
     public static void d(@Nullable Object object) {
         if(!opLog)return;
-        Logger.d(object);
+//        Logger.d(object);
+        Log.d("sip",object.toString());
     }
     public static void d(@NonNull String message, @Nullable Object... args) {
         if(!opLog)return;
@@ -29,7 +30,9 @@ public class TyLog {
     }
     public static void i(@NonNull String message, @Nullable Object... args) {
         if(!opLog)return;
-        Logger.i(message, args);
+//        Logger.i(message, args);
+        Log.i("sip",message);
+
     }
     public static void e(@NonNull String message, @Nullable Object... args) {
         if(!opLog)return;
