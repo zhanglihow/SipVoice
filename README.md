@@ -7,7 +7,7 @@
 正常运行该 Demo ，需要已有 Sip 服务端，Constants 中配置 ip 和端口。 
 
 解决了一个坑，通话2分钟必定断开，在 pjsip-android 提了 issues ,[https://github.com/VoiSmart/pjsip-android/issues/89](https://github.com/VoiSmart/pjsip-android/issues/89)  
-估计他们使用的服务器不要客户端发心跳，所以一直没有找到答案，不过还是非常感谢 pjsip-android 团队。
+估计他们使用的服务器不要客户端发心跳，所以一直没有找到答案，不过还是非常感谢 pjsip-android 的团队。
 
 后面通过抓win软件的包，与同事沟通，找资料等方式，得知客户端需要主动发心跳，这才解决。  
 
