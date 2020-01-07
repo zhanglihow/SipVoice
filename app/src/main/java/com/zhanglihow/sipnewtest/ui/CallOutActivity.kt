@@ -48,6 +48,7 @@ class CallOutActivity : AppCompatActivity() {
     private var timeDispose: Disposable? = null
     //计时器
     private var timeOutDispose: Disposable? = null
+    private var timeSendDispose: Disposable? = null
     private var updateDispose: Disposable? = null
 
     private var startVoiceTime: Long = 0
@@ -150,6 +151,19 @@ class CallOutActivity : AppCompatActivity() {
         timeOutDispose?.dispose()
         startVoiceTime = System.currentTimeMillis()
         getCall()
+
+        //发心跳
+        timeSendDispose = Observable.interval(5000, 5000, TimeUnit.MILLISECONDS)
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe {
+                TyLog.i("send sip info")
+                SipServiceCommand.sendRequest(
+                    applicationContext,
+                    Constants.SipAccountID,
+                    callId,
+                    "INFO"
+                )
+            }
     }
 
     /**
@@ -174,5 +188,6 @@ class CallOutActivity : AppCompatActivity() {
         timeDispose?.dispose()
         timeOutDispose?.dispose()
         updateDispose?.dispose()
+        timeSendDispose?.dispose()
     }
 }

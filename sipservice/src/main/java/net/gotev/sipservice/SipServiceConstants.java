@@ -14,6 +14,7 @@ public interface SipServiceConstants {
     String ACTION_HOLD_CALLS = "holdCalls";
     String ACTION_GET_CALL_STATUS = "getCallStatus";
     String ACTION_SEND_DTMF = "sendDtmf";
+    String ACTION_SEND_REQUEST = "sendRequest";
     String ACTION_ACCEPT_INCOMING_CALL = "acceptIncomingCall";
     String ACTION_DECLINE_INCOMING_CALL = "declineIncomingCall";
     String ACTION_SET_HOLD = "callSetHold";
@@ -42,6 +43,7 @@ public interface SipServiceConstants {
     String PARAM_NUMBER = "number";
     String PARAM_CALL_ID = "callId";
     String PARAM_DTMF = "dtmf";
+    String PARAM_INFO = "info";
     String PARAM_HOLD = "hold";
     String PARAM_MUTE = "mute";
     String PARAM_CODEC_PRIORITIES = "codecPriorities";

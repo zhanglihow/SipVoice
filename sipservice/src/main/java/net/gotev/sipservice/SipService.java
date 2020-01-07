@@ -10,6 +10,7 @@ import android.view.Surface;
 import net.gotev.sipservice.log.TyLog;
 
 import org.pjsip.pjsua2.AudDevManager;
+import org.pjsip.pjsua2.CallSendRequestParam;
 import org.pjsip.pjsua2.CallVidSetStreamParam;
 import org.pjsip.pjsua2.CodecFmtpVector;
 import org.pjsip.pjsua2.CodecInfo;
@@ -116,6 +117,9 @@ public class SipService extends BackgroundService implements SipServiceConstants
                         break;
                     case ACTION_SEND_DTMF:
                         handleSendDTMF(intent);
+                        break;
+                    case ACTION_SEND_REQUEST:
+                        handleSendRequest(intent);
                         break;
                     case ACTION_ACCEPT_INCOMING_CALL:
                         handleAcceptIncomingCall(intent);
@@ -253,6 +257,27 @@ public class SipService extends BackgroundService implements SipServiceConstants
         } catch (Exception exc) {
             TyLog.e("Error while dialing dtmf: " + dtmf + ". AccountID: "
                          + accountID + ", CallID: " + callID);
+        }
+    }
+
+    private void handleSendRequest(Intent intent) {
+        String accountID = intent.getStringExtra(PARAM_ACCOUNT_ID);
+        int callID = intent.getIntExtra(PARAM_CALL_ID, 0);
+        String info = intent.getStringExtra(PARAM_INFO);
+
+        SipCall sipCall = getCall(accountID, callID);
+        if (sipCall == null) {
+            notifyCallDisconnected(accountID, callID);
+            return;
+        }
+
+        CallSendRequestParam prm=new CallSendRequestParam();
+        prm.setMethod(info);
+        try {
+            sipCall.sendRequest(prm);
+        } catch (Exception exc) {
+            TyLog.e("Error handleSendRequest: " + prm + ". AccountID: "
+                    + accountID + ", CallID: " + callID);
         }
     }
 

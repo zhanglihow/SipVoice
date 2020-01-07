@@ -246,6 +246,16 @@ public class SipServiceCommand implements SipServiceConstants {
         intent.putExtra(PARAM_DTMF, dtmfTone);
         context.startService(intent);
     }
+    public static void sendRequest(Context context, String accountID, int callID, String info) {
+        checkAccount(accountID);
+
+        Intent intent = new Intent(context, SipService.class);
+        intent.setAction(ACTION_SEND_REQUEST);
+        intent.putExtra(PARAM_ACCOUNT_ID, accountID);
+        intent.putExtra(PARAM_CALL_ID, callID);
+        intent.putExtra(PARAM_INFO, info);
+        context.startService(intent);
+    }
 
     /**
      * Accept an incoming call. If the call does not exist or has been terminated, a disconnected
