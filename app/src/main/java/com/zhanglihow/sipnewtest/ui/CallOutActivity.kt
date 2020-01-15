@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
@@ -136,10 +137,16 @@ class CallOutActivity : AppCompatActivity() {
      */
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun disconnectCall(event: CallDisconnectEvent) {
+        EventBus.getDefault().unregister(this)
+
+        SipServiceCommand.hangUpActiveCalls(applicationContext, Constants.SipAccountID)
+        SipServiceCommand.mineDisConnect(applicationContext, Constants.SipAccountID, callId)
+
+        Log.i("Callout","disconnectCall")
+
         ToastManage.s(applicationContext, "对方已挂断")
         finish()
     }
-
 
     /**
      * 对方接听电话

@@ -212,6 +212,16 @@ public class SipServiceCommand implements SipServiceConstants {
         context.startService(intent);
     }
 
+    public static void mineDisConnect(Context context, String accountID, int callID){
+        checkAccount(accountID);
+
+        Intent intent = new Intent(context, SipService.class);
+        intent.setAction(ACTION_DISCONNECT);
+        intent.putExtra(PARAM_ACCOUNT_ID, accountID);
+        intent.putExtra(PARAM_CALL_ID, callID);
+        context.startService(intent);
+    }
+
     /**
      * Hangs up active calls.
      * @param context application context
@@ -294,6 +304,16 @@ public class SipServiceCommand implements SipServiceConstants {
 
         Intent intent = new Intent(context, SipService.class);
         intent.setAction(ACTION_DECLINE_INCOMING_CALL);
+        intent.putExtra(PARAM_ACCOUNT_ID, accountID);
+        intent.putExtra(PARAM_CALL_ID, callID);
+        context.startService(intent);
+    }
+
+    public static void sendBusyCall(Context context, String accountID, int callID){
+        checkAccount(accountID);
+
+        Intent intent = new Intent(context, SipService.class);
+        intent.setAction(ACTION_SEND_BUSY);
         intent.putExtra(PARAM_ACCOUNT_ID, accountID);
         intent.putExtra(PARAM_CALL_ID, callID);
         context.startService(intent);

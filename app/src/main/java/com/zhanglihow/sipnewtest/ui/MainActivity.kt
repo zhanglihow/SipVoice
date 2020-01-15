@@ -74,10 +74,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         when (v?.id) {
             R.id.btn_register -> {
                 val user = SipAccountData()
-                user.realm = Constants.SIP_DOMAIN
+                user.realm = "myvoipapp.com"
                 user.host = Constants.SIP_DOMAIN
                 user.username = edit_mine.text.toString()
-                user.password = "123456"
+                user.password = "100"
                 user.contactUriParams = ""
                 user.port = Constants.SIP_PORT
                 Constants.SipAccountID = SipServiceCommand.setAccount(applicationContext, user)

@@ -178,6 +178,12 @@ public class SipService extends BackgroundService implements SipServiceConstants
                     case ACTION_MAKE_DIRECT_CALL:
                         handleMakeDirectCall(intent);
                         break;
+                    case ACTION_DISCONNECT:
+                        disConnect(intent);
+                        break;
+                    case ACTION_SEND_BUSY:
+                        sendBusyCall(intent);
+                        break;
                     default: break;
                 }
 
@@ -1070,6 +1076,37 @@ public class SipService extends BackgroundService implements SipServiceConstants
 
         sipCall.stopPreviewVideoFeed();
     }
+
+    public void disConnect(Intent intent){
+        String accountID = intent.getStringExtra(PARAM_ACCOUNT_ID);
+        int callID = intent.getIntExtra(PARAM_CALL_ID, 0);
+        SipCall sipCall = getCall(accountID, callID);
+        if (sipCall == null) {
+            notifyCallDisconnected(accountID, callID);
+            return;
+        }
+        sipCall.mineDisconnect(callID);
+    }
+
+    private void sendBusyCall(Intent intent){
+        String accountID = intent.getStringExtra(PARAM_ACCOUNT_ID);
+        int callID = intent.getIntExtra(PARAM_CALL_ID, 0);
+
+        try {
+            SipCall sipCall = getCall(accountID, callID);
+
+            if (sipCall == null) {
+                notifyCallDisconnected(accountID, callID);
+                return;
+            }
+            sipCall.sendBusyHereToIncomingCall();
+
+        } catch (Exception exc) {
+            TyLog.e("Error while send busy call:" + exc);
+            notifyCallDisconnected(accountID, callID);
+        }
+    }
+
 
     // Switch Camera
     private void handleSwitchVideoCaptureDevice(Intent intent) {

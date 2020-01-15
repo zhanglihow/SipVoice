@@ -408,6 +408,11 @@ class CallInActivity : AppCompatActivity() {
                                 mCallComingEvent.accountID,
                                 mCallComingEvent.callID)
 
+//                        SipServiceCommand.sendBusyCall(
+//                            applicationContext,
+//                            mCallComingEvent.accountID,
+//                            mCallComingEvent.callID)
+
                         ToastManage.s(this, "已拒绝")
                         finish()
                     }

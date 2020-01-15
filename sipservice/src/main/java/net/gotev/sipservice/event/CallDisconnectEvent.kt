@@ -7,5 +7,5 @@ package net.gotev.sipservice.event
  * @email zhanglihow@gmail.com
  * @time
  */
-class CallDisconnectEvent {
+class CallDisconnectEvent(val callId:Int) {
 }

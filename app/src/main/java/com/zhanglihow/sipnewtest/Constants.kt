@@ -10,7 +10,7 @@ package com.zhanglihow.sipnewtest
 class Constants {
     companion object{
         var SipAccountID=""
-        const val SIP_PORT:Long=5060
-        const val SIP_DOMAIN="25.30.9.134"
+        const val SIP_PORT:Long=8060
+        const val SIP_DOMAIN="192.168.1.135"
     }
 }

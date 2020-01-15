@@ -171,7 +171,7 @@ public class BroadcastEventReceiver extends BroadcastReceiver implements SipServ
         }
         //挂断 callStateCode=PJSIP_INV_STATE_DISCONNECTED
         else if(callStateCode==pjsip_inv_state.PJSIP_INV_STATE_DISCONNECTED){
-            EventBus.getDefault().post(new CallDisconnectEvent());
+            EventBus.getDefault().post(new CallDisconnectEvent(callID));
         }
     }
 

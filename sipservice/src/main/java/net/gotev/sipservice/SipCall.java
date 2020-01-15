@@ -617,4 +617,11 @@ public class SipCall extends Call {
 
         account.getService().getBroadcastEmitter().callStats(duration, audioCodec, callStatus, rx, tx);
     }
+
+    public void mineDisconnect(int callID){
+        checkAndStopLocalRingBackTone();
+        stopVideoFeeds();
+        stopSendingKeyFrame();
+        account.removeCall(callID);
+    }
 }
