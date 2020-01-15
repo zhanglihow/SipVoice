@@ -36,7 +36,7 @@ demo 中，实现了基本的语音对讲的功能，拨号，接听，静音，
 <img width = "250" height = "450" src="https://github.com/zhanglihow/SipVoice/blob/master/img/callin_2.png?raw=true" />
 <img width = "250" height = "450" src="https://github.com/zhanglihow/SipVoice/blob/master/img/callin_3.png?raw=true" />
 
-有个免费试用的sip服务器：[https://www.myvoipapp.com/download/index.html](https://www.myvoipapp.com/download/index.html)    
+想要测试的朋友，可以看下这个免费试用的sip服务器，miniSipServer：[https://www.myvoipapp.com/download/index.html](https://www.myvoipapp.com/download/index.html)    
   
 <img width = "450" height = "250" src="https://github.com/zhanglihow/SipVoice/blob/master/img/minisipserver.png?raw=true" />  
 <img width = "250" height = "150" src="https://github.com/zhanglihow/SipVoice/blob/master/img/minisipserver2.png?raw=true" />
